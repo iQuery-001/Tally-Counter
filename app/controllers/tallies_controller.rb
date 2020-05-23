@@ -1,0 +1,2 @@
+class TalliesController < ApplicationController
+end
