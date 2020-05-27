@@ -1,3 +1,8 @@
 class TallySerializer < ActiveModel::Serializer
-  attributes :id
+  include FastJsonapi::ObjectSerializer
+  
+  attributes :user_id, :content
+
+  has_many :comments
+  belongs_to :user
 end
