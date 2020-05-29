@@ -8,7 +8,18 @@ class CommentsController < ApplicationController
         else
         render json: {
             status: 500,
-            errors: ['no comments found']
+            errors: ['No comments found']
+        }
+        end
+    end
+
+    def show
+        if @comment
+            render json: CommentSerializer.new(@comment).serialized_json
+        else
+            render json: {
+            status: 500,
+            errors: ['No comments found']
         }
         end
     end
@@ -17,9 +28,14 @@ class CommentsController < ApplicationController
         @comment = comment.new(comment_params)
 
         if @comment.save
-            console.log('success')
+            render json: {
+                status: 200
+            }
         else
-            console.log('failure')
+            render json: {
+                status: 500,
+                errors: ['Did not save']
+            }
         end
     end
     
