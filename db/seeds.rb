@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+joke = Tally.new
+joke.content = "lol"
+joke.creator = User.first
+joke.target = User.second

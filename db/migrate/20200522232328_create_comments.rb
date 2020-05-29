@@ -5,7 +5,6 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.string :content
       t.integer :tally_id
       t.timestamps
-
     end
   end
 end
