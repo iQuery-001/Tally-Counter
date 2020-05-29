@@ -1,11 +1,9 @@
 class TalliesController < ApplicationController
     before_action :find_tally, only: [:show, :edit, :update]
-    
+
     def index
         @tallies = Tally.all
-        options = {include: [:user]}
-        render json: TallySerializer.new(@tallies, options).serialized_json
-
+        render json: TallySerializer.new(@tallies).serialized_json
     end
 
     def new
