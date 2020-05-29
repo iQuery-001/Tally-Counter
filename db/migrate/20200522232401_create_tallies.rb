@@ -5,6 +5,8 @@ class CreateTallies < ActiveRecord::Migration[6.0]
       # t.integer :creator_id
       # t.integer :target_id
       t.string :content
+      t.timestamps
+      
     end
   end
 end
