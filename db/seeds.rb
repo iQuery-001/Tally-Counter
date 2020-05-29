@@ -7,7 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-joke = Tally.new
-joke.content = "lol"
-joke.creator = User.first
-joke.target = User.second
+tsura = User.first
+jeff = User.second
+tony = User.third
+
+tsura.tallies.build
+tsura.tallies.first.content = "lol"
+tsura.tallies.first.save
+
+jeff.tallies.build
+jeff.tallies.first.content = "idk"
+jeff.tallies.first.save
+
+tony.tallies.build
+tony.tallies.first.content = "I have buddies in the marines"
+tony.tallies.first.save
+
